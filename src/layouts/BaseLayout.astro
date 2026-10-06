@@ -1,0 +1,42 @@
+---
+const { title = 'Marcello | Infraestrutura, Redes & Segurança', description = 'Sustentação, infraestrutura, redes, segurança, monitoramento, cloud e automação para ambientes de TI.' } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://mkdsdigital.com.br');
+const organization = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'MARCELLO.infra',
+  url: 'https://mkdsdigital.com.br',
+  email: 'contato@mkdsdigital.com.br',
+  telephone: '+55-64-99948-7995',
+  founder: { '@type': 'Person', name: 'Marcello Leones', url: 'https://www.linkedin.com/in/marcelloleones' },
+  description: 'Sustentação, infraestrutura, redes, segurança, monitoramento, cloud e automação para ambientes de TI.',
+};
+---
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="MARCELLO.infra" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="theme-color" content="#f7f9fb" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap.xml" />
+    <script type="application/ld+json" set:html={JSON.stringify(organization)} />
+    <style is:global>
+      :root{font-family:Arial,Helvetica,sans-serif;color:#182635;background:#f7f9fb;font-synthesis:none;text-rendering:optimizeLegibility;--ink:#182635;--navy:#10243a;--muted:#627181;--line:#dfe6ec;--teal:#168d88;--paper:#fff}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0}a{color:inherit}button,input,select,textarea{font:inherit}button,a{-webkit-tap-highlight-color:transparent}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #35ada6;outline-offset:3px}.wrap{width:min(1160px,calc(100% - 48px));margin:auto}.eyebrow{font:500 11px 'Courier New',monospace;letter-spacing:.15em;text-transform:uppercase;color:var(--teal)}.section{padding:112px 0}.section-head{max-width:650px;margin-bottom:45px}.section-head h2{font-size:clamp(32px,4.5vw,52px);line-height:1.08;letter-spacing:-.045em;margin:14px 0}.section-head p{color:var(--muted);line-height:1.8;font-size:16px}.button{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:50px;padding:0 22px;border-radius:5px;text-decoration:none;font-weight:700;font-size:13px;transition:transform .2s,background .2s}.button:hover{transform:translateY(-2px)}.button-primary{color:white;background:var(--teal)}.button-primary:hover{background:#117a75}.button-quiet{border:1px solid #c8d2dc;background:transparent}.tag{font:11px 'Courier New',monospace;color:#536577;background:#f0f4f7;border-radius:3px;padding:7px 9px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media(max-width:700px){.wrap{width:calc(100% - 36px)}.section{padding:78px 0}}
+    </style>
+  </head>
+  <body><slot /></body>
+</html>
